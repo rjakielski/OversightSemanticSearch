@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oversight-semantic-search"
+version = "0.1.0"
+description = "Standalone and reusable semantic search over OIG scrape reports"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26",
+  "streamlit>=1.44,<2.0",
+]
+
+[project.scripts]
+oversight-search = "oversight_semantic_search.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
